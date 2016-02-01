@@ -15,13 +15,10 @@ public class App {
   public static void main(String[] args) throws InterruptedException ,
     IOException {
     List<String> list = new ArrayList<String>();
-    //list.add("ls");
-    //list.add("/tmp");
     list.addAll(Arrays.asList(args));
+    System.out.println(list.size());
  
     ProcessBuilder pb = new ProcessBuilder(list);
-    
-    System.out.println("Run echo command");
     Process process = pb.start();
     int errCode = process.waitFor();
     System.out.println("Echo command executed, any errors? " + (errCode == 0 ? "No" : "Yes"));
